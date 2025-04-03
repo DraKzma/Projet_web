@@ -1,0 +1,30 @@
+body{
+  background-color:#764929
+}
+
+#contenu{
+  background-color: #FFFFE0;
+  width: 1300px;
+  height:800px;
+  border: 3px solid black;
+  margin:auto, auto, auto, auto;
+}
+
+header{
+  background-image: url("tresor.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 80px;
+  width: 1200px;
+  text-align:left;
+  margin:20px;
+  background-size:250px
+}
+
+img {
+  width: 30px;
+  
+  
+
+
+}
