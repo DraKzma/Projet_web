@@ -20,6 +20,8 @@ Fonctionnalités:
 -Page de fin: tableau des joueurs qui ont gagnés
 -choix_enigme: page qui offre le choix aux joueurs d'aller sur toutes les énigmes qu'ils ont débloquées
 
+-Faire un : voir mon profil sur chacune des pages, avec la possibilité dans cette page la de modifier le mot de passe, voir des informations sur nous etc...
+
 Vérifications:
 
 -On ne peut accéder aux pages choix_enigme et + si on est pas connectee

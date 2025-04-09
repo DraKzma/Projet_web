@@ -20,7 +20,7 @@ function affichage_connectee(){
             echo "<li>\n";
             echo "<em>Fin : </em>";
             if($progres >= $i){
-                echo "<strong><a href='bravo.html'>Bravo</a></strong>\n";
+                echo "<strong><a href='bravo.php'>Bravo</a></strong>\n";
             }
             else{
                 echo "<strong>Page non débloquée</strong>\n";

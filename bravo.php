@@ -1,4 +1,6 @@
 <?php
+session_start();
+include "connex.inc.php";
 function affichage_non_connecte(){
     echo "vous ne pouvez pas accéder à cette page car vous n'êtes pas connecté \n";
     echo "ça se passe ici <a href='connexion.php'>Se connecter </a>";
@@ -16,9 +18,10 @@ function affichage_connecte(){
         $stmt->execute();
         $bdd_pseudo=$stmt->fetchAll();
         echo "<ul>\n";
-        for ($i=0 ; $i<count(bdd_pseudo) ; $i++){
+        for ($i=0 ; $i<count($bdd_pseudo) ; $i++){
             echo "<li>\n";
-            echo "$bdd_pseudo[$i]['pseudo']";
+            $blaze=$bdd_pseudo[$i]['pseudo'];
+            echo "$blaze\n";
             echo "</li>\n";
         }
         echo "</ul>\n";
