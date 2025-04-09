@@ -9,11 +9,37 @@ function affichage_non_connectee(){
 }
 
 function affichage_connectee(){
-    echo "<h2>TESTS</h2>\n";
+    echo "<h1>Choix de l&apos;énigme</h1>\n";
+    echo "<p><em>Choisissez l'énigme à laquelle vous voulez commencez. Vous avez seulement accès aux énigmes que vous avez débloquées.</em></p>\n";
     $pseudo = $_SESSION['pseudo'];
     $statut = $_SESSION['statut'];
     $progres = $_SESSION['progres'];
-    echo "$pseudo $statut $progres";
+    echo "<ul>\n";
+    for($i=1; $i<=6; $i++){
+        if($i==6){
+            echo "<li>\n";
+            echo "<em>Fin : </em>";
+            if($progres >= $i){
+                echo "<strong><a href='bravo.html'>Bravo</a></strong>\n";
+            }
+            else{
+                echo "<strong>Page non débloquée</strong>\n";
+            }
+            echo "</li>\n";
+        }
+        else{
+            echo "<li>\n";
+            echo "<em>Enigme $i : </em>";
+            if($progres >= $i){
+                echo '<strong><a href="enigme'.$i.'.php">Enigme '.$i.'</a></strong>'."\n";
+            }
+            else{
+                echo "<strong>Page non débloquée</strong>\n";
+            }
+            echo "</li>\n";
+        }
+    }
+    echo "</ul>\n";
 }
 
 function choix_affichage(){

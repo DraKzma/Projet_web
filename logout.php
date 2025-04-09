@@ -14,9 +14,7 @@ else{
         header("Location:accueil.html");
     }
     else{
-        if($_GET["logout"] == "bravo"){
-            header("Location:bravo.html");
-        }
+        echo "<h3>Une erreure innatendue s'est produite, les devs devraient vraiment apprendre à coder..</h3>\n";
     }
 }
 
