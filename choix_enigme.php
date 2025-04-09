@@ -20,7 +20,7 @@ function affichage_connectee(){
             echo "<li>\n";
             echo "<em>Fin : </em>";
             if($progres >= $i){
-                echo "<strong><a href='bravo.html'>Bravo</a></strong>\n";
+                echo "<strong><a href='bravo.php'>Bravo</a></strong>\n";
             }
             else{
                 echo "<strong>Page non débloquée</strong>\n";
@@ -40,6 +40,10 @@ function affichage_connectee(){
         }
     }
     echo "</ul>\n";
+    echo "<footer>\n";
+    echo "<em>Ou vous pouvez vous déconnecter si vous voulez, mais bon, vous allez rater quelque chose..</em>\n";
+    echo "<br>";
+    echo "<strong><a href='logout.php?logout=accueil'>Se déconnecter</a></strong>\n";
 }
 
 function choix_affichage(){

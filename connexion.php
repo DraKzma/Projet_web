@@ -5,6 +5,7 @@ include "connex.inc.php";
 
 function affichage_connectee(){
     echo "<h3>Vous êtes déjà connecté, qu'attendez vous?</h3>\n";
+    echo "<p><em>Pour accéder aux énigmes c&apos;est par ici : <strong><a href='choix_enigme.php'>Choix</a></strong>\n";
 }
 
 function afficheFormulaire($p){
@@ -66,11 +67,11 @@ function choix_affichage(){
 <html lang="fr">
     <head>
         <meta charset="UTF-8"/>
-        <title>Connexion_TRESOR</title>
+        <title>Connexion_TRESOR</title> 
     </head>
     <body>
 
-        <?php choix_affichage(); ?>
-        
+            <?php choix_affichage(); ?>
+            
     </body>
 </html>
