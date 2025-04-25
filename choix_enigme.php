@@ -43,7 +43,8 @@ function affichage_connectee(){
     echo "<footer>\n";
     echo "<em>Ou vous pouvez vous déconnecter si vous voulez, mais bon, vous allez rater quelque chose..</em>\n";
     echo "<br>";
-    echo "<strong><a href='logout.php?logout=accueil'>Se déconnecter</a></strong>\n";
+    echo "<br>";
+    echo "<strong><a id='lien1' href='logout.php?logout=accueil'>Se déconnecter</a></strong>\n";
 }
 
 function choix_affichage(){
@@ -62,10 +63,13 @@ function choix_affichage(){
     <head>
         <meta charset="UTF-8"/>
         <title>Choix_TRESOR</title>
+        <link rel="stylesheet" href="choix_enigme.css">
     </head>
     <body>
-
+      <div id="contenu">
         <?php choix_affichage(); ?>
+      </div>
+      
             
     </body>
 </html>
