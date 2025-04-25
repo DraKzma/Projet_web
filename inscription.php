@@ -10,11 +10,11 @@ function affichage_connectee(){
 
 function afficheFormulaire($p){
     echo "<form action='".htmlspecialchars($_SERVER['PHP_SELF'])."'method='post'>\n";
-    echo "<label>Pseudo: <input type='text' value='".$p."' name='pseudo' required='required'></label>\n";
+    echo "<label>Pseudo: <input id='pseudo' type='text' value='".$p."' name='pseudo' required='required'></label>\n";
     echo "<br>\n";
-    echo "<label>Mot de passe: <input type='password' name='mdp' required='required'></label>\n";
+    echo "<label>Mot de passe: <input id='mdp' type='password' name='mdp' required='required'></label>\n";
     echo "<br>\n";
-    echo "<button type='submit' name='envoi'>Submit</button>\n";
+    echo "<button id='envoi' type='submit' name='envoi'>Submit</button>\n";
     echo "<br\n>";
     echo "</form>\n";
 }
@@ -66,10 +66,12 @@ function choix_affichage(){
     <head>
         <meta charset="UTF-8"/>
         <title>Inscription_TRESOR</title>
+        <link rel="stylesheet" href="inscription.css">
     </head>
     <body>
-
-        <?php choix_affichage(); ?>
-        
+      <h1> BIENVENUE SUR LA PAGE D'INSCRIPTION </h1>
+      <h2> sur cette page vous allez pouvoir vous inscrire </h2>
+      <?php choix_affichage(); ?>
+      
     </body>
 </html>

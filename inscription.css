@@ -1,0 +1,55 @@
+body{
+  background-color: #F4E2B8;
+  background-image: url("https://www.transparenttextures.com/patterns/old-map.png"); 
+  font-family: cursive;
+  color: #3E2C00;
+  padding: 10%;
+}
+
+h1{
+    font-size: 36px;
+    text-align: center;
+    color: #8B4513;
+    text-shadow: 2px 2px #D2B48C;
+
+}
+
+h2{
+    text-align: center;
+    font-size: 20px;
+    color: #5C3D0C;
+    text-shadow: 2px 2px #D2B48C ;
+
+}
+
+
+label{
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#pseudo{
+  width: 100%;
+  padding: 1%;
+  border: 1px solid  ;
+  background-color: #FFFEF5;
+  font-family: cursive;
+
+}
+#mdp{
+    width: 100%;
+    padding: 1%;
+    border: 1px solid;
+    background-color: #fffef5;
+    font-family: cursive;
+}
+
+#envoi{
+    margin-top: 3%;
+    padding: 2%;
+    background-color: #8B0000;
+    color: white;
+    cursor: pointer;
+    font-family:cursive;
+}
+
