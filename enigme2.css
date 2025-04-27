@@ -23,41 +23,23 @@ h2{
   text-shadow: 2px 2px white;
 }
 
-header{
-  height: 10%;
-  width: 100%;
-  text-align:left;
-  background-size:250px
-}
-
-footer{
-  margin-top:50px;
-}
-
-#img1{
-  width:30%;
-  height:30%;
-  display:block;
-  float:right;
-
-}
-
 #lien1{
-  margin-top: 3%;
-  padding: 15px;
+  margin-left: 210px;
+  padding: 15px 30px 15px 30px;
   background-color: #8B0000;
   color: white;
   width:100px;
   cursor: pointer;
   font-family:cursive;
-  margin-right: 2%;
-
+  font-size: 20px;
 }
-#lien2{
-  margin-top: 3%;
-  padding: 15px;
-  background-color: #8B0000;
-  color: white;
+
+#bouton{
+  background-color: #DD0000;
+  padding: 5px 15px 5px 15px;
   cursor: pointer;
-  font-family:cursive;
+}
+
+#condition{
+  text-decoration: underline;
 }
