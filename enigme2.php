@@ -27,6 +27,7 @@ function affichage_connectee(){
 }
 
 function chrono($duree){
+    echo "<script>decompte($duree);</script>\n";
     header( "refresh:$duree; url=enigme2.php" );
 }
 
@@ -34,7 +35,14 @@ function affichage_connectee_GET(){
     $espace = rand(0, 145);
     $saut = rand(0, 30);
     $suivant = $_GET["etape"] + 1;
+    $temps = 3 - 0.2 * $_GET["etape"];
     echo "<header>\n";
+    if($temps == 3 || $temps == 2 || $temps == 1 || $temps == 0){
+        echo "<span id='temps'>Temps: <span id='chrono'>"."0"."$temps".".00"."</span></span>\n";
+    }
+    else{
+        echo "<span id='temps'>Temps: <span id='chrono'>"."0"."$temps"."0"."</span></span>\n";
+    }
     echo "<strong id='bord'>";
     for($i=0; $i<66; $i++){
         echo "_";
@@ -53,7 +61,7 @@ function affichage_connectee_GET(){
         echo '<a id="bouton" href="enigme2.php?etape='."$suivant".'"></a>';
     }
     else{
-        echo '<a id="bouton" href="enigme3.php"></a>';
+        echo '<a id="bouton" href="enigme3.php?update=1"></a>';
     }
     echo "</p>\n";
     for($i=0; $i<$saut; $i++){
@@ -97,6 +105,7 @@ function choix_affichage(){
         <meta charset="utf-8">
         <title>Enigme2</title>
         <link rel="stylesheet" href="enigme2.css">
+        <script src="enigme2.js"></script>
     </head>
     <body>
         

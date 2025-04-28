@@ -43,3 +43,10 @@ h2{
 #condition{
   text-decoration: underline;
 }
+
+#temps{
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 100px 10px 100px;
+  margin: 5px 80px 5px 80px;
+}
