@@ -34,16 +34,6 @@ h2{
   font-size: 20px;
 }
 
-#bouton{
-  background-color: #DD0000;
-  padding: 5px 15px 5px 15px;
-  cursor: pointer;
-}
-
-#condition{
-  text-decoration: underline;
-}
-
 #temps{
   font-weight: bold;
   font-size: 30px;
@@ -53,5 +43,11 @@ h2{
 
 #bord{
   font-size: 20px;
+  font-weight: bold;
+}
+
+#mots{
+  font-familly: sans-serif;
+  font-size: 25px;
   font-weight: bold;
 }

@@ -44,7 +44,7 @@ function affichage_connectee_GET(){
         echo "<span id='temps'>Temps: <span id='chrono'>"."0"."$temps"."0"."</span></span>\n";
     }
     echo "<strong id='bord'>";
-    for($i=0; $i<66; $i++){
+    for($i=0; $i<52; $i++){
         echo "_";
     }
     echo "</strong>\n";
@@ -69,7 +69,7 @@ function affichage_connectee_GET(){
     }
     echo "<footer>\n";
     echo "<strong id='bord'>";
-    for($i=0; $i<66; $i++){
+    for($i=0; $i<52; $i++){
         echo "_";
     }
     echo "</strong>\n";
