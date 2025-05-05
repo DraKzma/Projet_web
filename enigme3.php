@@ -83,6 +83,7 @@ function affichage_connectee_observation(){
     
     echo "<header>\n";
     echo "<span id='temps'>Temps: <span id='chrono'>"."$temps".".00"."</span></span>\n";
+    echo "<br>\n";
     echo "<strong id='bord'>";
     for($i=0; $i<52; $i++){
         echo "_";

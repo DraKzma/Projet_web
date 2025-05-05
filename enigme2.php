@@ -43,6 +43,7 @@ function affichage_connectee_GET(){
     else{
         echo "<span id='temps'>Temps: <span id='chrono'>"."0"."$temps"."0"."</span></span>\n";
     }
+    echo "<br>\n";
     echo "<strong id='bord'>";
     for($i=0; $i<52; $i++){
         echo "_";
