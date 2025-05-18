@@ -6,13 +6,13 @@ include "connex.inc.php";
 function ajout_niveau(){
     $pseudo = $_SESSION["pseudo"];
     $progres = $_SESSION["progres"];
-    if($progres < 6){
+    if($progres < 5){
         $base = "tresor.sqlite";
         $pdo = connex($base);
-        $stmt = $pdo->prepare("UPDATE joueurs SET progres = 6 WHERE pseudo = :pseudo");
+        $stmt = $pdo->prepare("UPDATE joueurs SET progres = 5 WHERE pseudo = :pseudo");
         $stmt->bindParam(":pseudo", $pseudo);
         $stmt->execute();
-        $_SESSION["progres"] = 6;
+        $_SESSION["progres"] = 5;
     }
     header("Location:bravo.php");
 }
@@ -24,7 +24,7 @@ function affichage_non_connecte(){
 
 function affichage_connectee(){
     $progres=$_SESSION["progres"];
-    if ($progres != 6){
+    if ($progres != 5){
         echo "vous ne pouvez pas accéder à cette page car vous n'avez pas remplis toutes les énigmes";
     }
     else{
@@ -39,7 +39,7 @@ function affichage_connectee(){
         /* Affichage de la liste des membres qui ont réussi */
         
         $pdo=connex("tresor.sqlite");
-        $stmt=$pdo->prepare("SELECT pseudo FROM joueurs WHERE progres = 6");
+        $stmt=$pdo->prepare("SELECT pseudo FROM joueurs WHERE progres = 5");
         $stmt->execute();
         $bdd_pseudo=$stmt->fetchAll();
         echo "<ul>\n";

@@ -1,5 +1,9 @@
 <?php
 session_start();
+$_SESSION['progres']=2;
+$_SESSION['statut']="jug";
+$_SESSION['pseudo']="nico";
+
 include "connex.inc.php";
 
 function affichage_non_connectee(){
@@ -38,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($score >= 3) {
         echo "<p>bravo!</p>\n";
-        echo "<a href='enigme2.php?update=1'>La suite</a>";
+        echo "<a id='lien1'href='enigme2.php?update=1'>La suite</a>";
     } else {
         $_SESSION['tentative']++;
     }
@@ -54,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           }
           $i++;
       }
-      echo "<button type='submit'>Soumettre</button>";
+      echo "<button type='submit' id='bouton'>Soumettre</button>";
       echo "</form>";
       
   }
@@ -81,8 +85,10 @@ function choix_affichage(){
     <link rel="stylesheet" href="enigme1.css">
 </head>
 <body>
+  <div id="contenu">
     <h2>Enigme 1</h2>
-   <?php choix_affichage(); ?>
+    <?php choix_affichage(); ?>
+ </div>
 </body>
 </html>
 
