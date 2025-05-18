@@ -19,7 +19,7 @@ function ajout_niveau(){
 
 function affichage_non_connectee(){
     echo "<h3>Vous devez vous connecter pour jouer à notre chasse au trésor <strong>INCROYABLE</strong></h3>\n";
-    echo "ça se passe ici <a href='connexion.php'>Se connecter</a>\n";
+    echo "ça se passe ici <a id='lien1' href='connexion.php'>Se connecter</a>\n";
 }
 
 function affichage_bloquee(){
