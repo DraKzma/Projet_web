@@ -24,7 +24,7 @@ function affichage_non_connecte(){
 
 function affichage_connectee(){
     $progres=$_SESSION["progres"];
-    if ($progres != 5){
+    if ($progres < 5){
         echo "vous ne pouvez pas accéder à cette page car vous n'avez pas remplis toutes les énigmes";
     }
     else{

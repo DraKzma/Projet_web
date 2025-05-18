@@ -15,8 +15,8 @@ function affichage_connectee(){
     $statut = $_SESSION['statut'];
     $progres = $_SESSION['progres'];
     echo "<ul>\n";
-    for($i=1; $i<=6; $i++){
-        if($i==6){
+    for($i=1; $i<=5; $i++){
+        if($i==5){
             echo "<li>\n";
             echo "<em>Fin : </em>";
             if($progres >= $i){

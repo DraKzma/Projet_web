@@ -1,9 +1,5 @@
 <?php
 session_start();
-$_SESSION['progres']=2;
-$_SESSION['statut']="jug";
-$_SESSION['pseudo']="nico";
-
 include "connex.inc.php";
 
 function affichage_non_connectee(){
