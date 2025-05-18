@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($score >= 3) {
-        echo "bravo! ";
-        session_destroy();
+        echo "<p>bravo!</p>\n";
+        echo "<a href='enigme2.php?update=1'>La suite</a>";
     } else {
         $_SESSION['tentative']++;
     }
@@ -60,9 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
 }
-$_SESSION["pseudo"]="nico";
-$_SESSION["statut"]="rr";
-$_SESSION["progres"]=2;
 
 function choix_affichage(){
     if(!isset($_SESSION["pseudo"]) || !isset($_SESSION["statut"]) || !isset($_SESSION["progres"])){

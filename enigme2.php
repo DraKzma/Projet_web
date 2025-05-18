@@ -3,6 +3,20 @@
 session_start();
 include "connex.inc.php";
 
+function ajout_niveau(){
+    $pseudo = $_SESSION["pseudo"];
+    $progres = $_SESSION["progres"];
+    if($progres < 2){
+        $base = "tresor.sqlite";
+        $pdo = connex($base);
+        $stmt = $pdo->prepare("UPDATE joueurs SET progres = 2 WHERE pseudo = :pseudo");
+        $stmt->bindParam(":pseudo", $pseudo);
+        $stmt->execute();
+        $_SESSION["progres"] = 2;
+    }
+    header("Location:enigme2.php");
+}
+
 function affichage_non_connectee(){
     echo "<h3>Vous devez vous connecter pour jouer à notre chasse au trésor <strong>INCROYABLE</strong></h3>\n";
     echo "ça se passe ici <a href='connexion.php'>Se connecter</a>\n";
@@ -82,17 +96,22 @@ function choix_affichage(){
         affichage_non_connectee();
     }
     else{
-        if($_SESSION["progres"] < 2){
-            affichage_bloquee();
+        if(isset($_GET["update"])){
+            ajout_niveau();
         }
         else{
-            if(!isset($_GET["etape"])){
-                affichage_connectee();
+            if($_SESSION["progres"] < 2){
+                affichage_bloquee();
             }
             else{
-                affichage_connectee_GET();
-                $duree = 3 - 0.2 * $_GET["etape"];
-                chrono($duree);
+                if(!isset($_GET["etape"])){
+                    affichage_connectee();
+                }
+                else{
+                    affichage_connectee_GET();
+                    $duree = 3 - 0.2 * $_GET["etape"];
+                    chrono($duree);
+                }
             }
         }
     }
