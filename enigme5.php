@@ -29,8 +29,65 @@ function affichage_bloquee(){
 
 function affichage_connectee(){
     echo "<h1>Enigme N°5</h1>\n";
-}
+    $questions = [
+    
+        "Première question " => ["Réponse A", "Réponse B", "Réponse C",1],    
+        "Seconde question " => ["Réponse A", "Réponse B", "Réponse C",2]
+    
+    ];
+    echo "<p>Bienvenue dans cette 5eme et derniere énigme ! dans cette énigme vous devez réaliser une sorte de mini compréhension oral comme on le faisait au lycée :) vous devez répondre juste aux 2 questions pour enfin pouvoir finir notre challenge ! </p>";
+    echo "<h1>Lecture de l'audio principal</h1>";
+    echo "<audio controls>";
+    echo "<source src='comprehension.wav' type='audio/wav'>";
+    echo "</audio>";
+    echo "<br>";
+    if (!isset($_SESSION['tentative_enigme_5'])) {
+    $_SESSION['tentative_enigme_5'] = 1;
+    
+    }
+    $score=null;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $score = 0;
+        $i = 0;
+        
+        foreach ($questions as $q => $reponse) {
+            $bonne = $reponse[3];
+            if (isset($_POST["q$i"]) && $_POST["q$i"] == $bonne) {
+                $score++;
+            }
+            $i++;
+        }
+        
+        if ($score >= 3) {
+            echo "bravo! ";
+            session_destroy();
+        } else {
+            $_SESSION['tentative_enigme_5']++;
+        }
+    }
+    if ($score == null || $score < 3){
 
+      $i=0;
+      foreach ($questions as $question => $reponse){
+          echo "<audio controls>";
+          echo "<source src='question$i.wav' type='audio/wav'>";
+          echo "</audio>";
+          echo "<br>";
+          for ($j=0 ; $j<3 ; $j++){
+              echo "<label>$reponse[$j]<input type='radio' name='q$i' value='$j' required></label>";
+              echo "<br>";
+          }
+          $i++;
+      }
+      echo "<button type='submit'>Soumettre</button>";
+      echo "</form>";
+    }
+      
+}
+$_SESSION["pseudo"]="nico";
+$_SESSION["statut"]="rr";
+$_SESSION["progres"]=5;
+    
 function choix_affichage(){
     if(!isset($_SESSION["pseudo"]) || !isset($_SESSION["statut"]) || !isset($_SESSION["progres"])){
         affichage_non_connectee();
